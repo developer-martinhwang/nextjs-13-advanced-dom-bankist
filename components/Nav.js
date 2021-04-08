@@ -33,19 +33,14 @@ const useStyles = makeStyles({
         textDecoration: "none",
     },
     active_main_nav: {
-        listStyleType: "none",
         display: "block",
-        padding: "0",
-        margin: "0",
-        color: "#333",
-        '& li': {
-            textAlign: "center",
-            margin: "15px auto"
-        }
+        position: "fixed",
+        width: "100%",
+        zIndex: "2"
     },
     logo: {
         '& img': {
-            padding: "0.5rem 0 0 0.5rem",
+            width: "8rem"
         }
     },
     '@media screen and (min-width: 768px)': {
@@ -88,9 +83,9 @@ function Nav() {
                 <div className={classes.bar}></div>
             </div>
             <a href="#" className={classes.logo}>
-                <img src="/img/logo.png" width="100px" height="50px"/>
+                <img src="/img/logo.png"/>
             </a>
-            <ul className={menu?classes.main_nav:classes.active_main_nav} id="js_menu">
+            <ul className={`${classes.main_nav} ${menu?classes.active_main_nav:null}`}>
                 <li>
                     <a href="#" className={classes.nav_links}>Features</a>
                 </li>
