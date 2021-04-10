@@ -87,9 +87,9 @@ const useStyles = makeStyles({
         main_nav: {
             opacity: 1,
             transform: "translateY(0%)",
+            position: "inherit",
             display: "flex",
-            marginLeft: "150px",
-            paddingRight: "200px",
+            paddingRight: "50px",
             flexDirection: "row",
             justifyContent: "flex-end",
             '& li': {
