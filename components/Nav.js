@@ -21,11 +21,17 @@ const useStyles = makeStyles({
     },
     main_nav:{
         listStyleType: "none",
-        display: "none",
+        position: "fixed",
+        zIndex: "2",
+        width: "100%",
         padding: "0",
         margin: "0",
         color: "#333",
         backgroundColor: "#f3f3f3d1",
+        animation: "$inactivMainNav 1000ms",
+        opacity: 0,
+        transform: "translateY(-200%)",
+        // display: "none",
         '& li': {
             textAlign: "center",
             margin: "15px auto"
@@ -35,15 +41,38 @@ const useStyles = makeStyles({
         textDecoration: "none",
     },
     active_main_nav: {
-        display: "block",
         position: "fixed",
+        zIndex: "2",
         width: "100%",
-        zIndex: "2"
+        animation: "$activMainNav 1000ms",
+        opacity: 1,
+        transform: "translateY(0%)",
+        // display: "block",
     },
     logo: {
         '& img': {
             width: "8rem",
             padding: "0.5rem 0 0 0.5rem"
+        }
+    },
+    '@keyframes activMainNav': {
+        "0%": {
+            opacity: 0,
+            transform: "translateY(-40%)"
+        },
+        "100%": {
+            opacity: 1,
+            transform: "translateY(0)"
+        }
+    },
+    '@keyframes inactivMainNav': {
+        "0%": {
+            opacity: 1,
+            transform: "translateY(0)"
+        },
+        "100%": {
+            opacity: 0,
+            transform: "translateY(-40%)",
         }
     },
     '@media screen and (min-width: 768px)': {
@@ -53,11 +82,14 @@ const useStyles = makeStyles({
             paddingBottom: "0",
             height: "70px",
             alignItems: "center",
-            width: "100%"
+            width: "100%",
         },
         main_nav: {
+            opacity: 1,
+            transform: "translateY(0%)",
             display: "flex",
-            marginRight: "30px",
+            marginLeft: "150px",
+            paddingRight: "200px",
             flexDirection: "row",
             justifyContent: "flex-end",
             '& li': {
@@ -91,7 +123,7 @@ function Nav() {
             </a>
             <ul className={`${classes.main_nav} ${menu?classes.active_main_nav:null}`}>
                 <li>
-                    <a href="#" className={classes.nav_links}>Features</a>
+                    <a href="https://www.google.com/" className={classes.nav_links}>Features</a>
                 </li>
                 <li>
                     <a href="#" className={classes.nav_links}>Operations</a>
