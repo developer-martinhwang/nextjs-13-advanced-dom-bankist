@@ -1,4 +1,4 @@
-function Section() {
+function Section_Atype() {
     return (
         <div>
             Enter
@@ -6,4 +6,4 @@ function Section() {
     );
 }
 
-export default Section;
+export default Section_Atype;

@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Nav from '../components/Nav'
 import Header from '../components/Header'
-
+import Section_Btype from '../components/Section_Btype'
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -18,6 +18,14 @@ export default function Home() {
       <main className={styles.main}>
         <Nav />
         <Header />
+        <Section_Btype 
+          style ={{padding: "2rem", backgroundColor: "#37383d"}}
+          header = {{text: "Feature", style: {color:"var(--color-primary)", fontSize: "1rem", textTransform: "uppercase"}}}
+          description = 
+          {{text: '<p>The best day to join Bankist was one year ago. The second best is today!</p>',
+            style: {color: "#fff"}
+            }} 
+        />
       </main>
 
       <footer className={styles.footer}>

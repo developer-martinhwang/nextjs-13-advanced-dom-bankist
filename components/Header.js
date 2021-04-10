@@ -46,12 +46,9 @@ const useStyles = makeStyles({
         color: "var(--color-primary)",
         border: "none",
         borderBottom: "1px solid currentColor",
-        paddingBottom: "2px",
+        paddingBottom: "1px",
         cursor: "pointer",
         transition: "all 0.3s",
-        '&:focus': {
-           border: "1px solid red"
-        }
     },
     '@media screen and (min-width: 768px)': {
         header:{
