@@ -4,6 +4,7 @@ const useStyles = makeStyles({
     navbar:{
         fontSize: "18px",
         paddingBottom: "10px",
+        width: "100%"
     },
     bar:{
         width: "30px",
@@ -24,6 +25,7 @@ const useStyles = makeStyles({
         padding: "0",
         margin: "0",
         color: "#333",
+        backgroundColor: "#f3f3f3d1",
         '& li': {
             textAlign: "center",
             margin: "15px auto"
@@ -40,7 +42,8 @@ const useStyles = makeStyles({
     },
     logo: {
         '& img': {
-            width: "8rem"
+            width: "8rem",
+            padding: "0.5rem 0 0 0.5rem"
         }
     },
     '@media screen and (min-width: 768px)': {
@@ -49,7 +52,8 @@ const useStyles = makeStyles({
             justifyContent: "space-between",
             paddingBottom: "0",
             height: "70px",
-            alignItems: "center"
+            alignItems: "center",
+            width: "100%"
         },
         main_nav: {
             display: "flex",
@@ -64,7 +68,7 @@ const useStyles = makeStyles({
             marginLeft: "40px"
         },
         navbar_toggle: {
-            display: "none"
+            display: "none",
         }
     },
 })

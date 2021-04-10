@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Nav from '../components/Nav'
+import Header from '../components/Header'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <Nav />
+        <Header />
       </main>
 
       <footer className={styles.footer}>
