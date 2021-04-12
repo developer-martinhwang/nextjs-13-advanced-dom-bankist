@@ -1,3 +1,12 @@
+/*
+ * Copyright(c)2021 developer.martinhwang@gmail.com
+ * All rights reserved.
+ * Filename: Index.js
+ * Key Options:
+ * -
+ * Revision History:
+ * -
+ */
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Nav from '../components/Nav'
@@ -20,7 +29,7 @@ export default function Home() {
         <Header />
         <Section_Btype 
           style ={{padding: "2rem", backgroundColor: "#37383d"}}
-          header = {{text: "Feature", style: {color:"var(--color-primary)", fontSize: "1rem", textTransform: "uppercase"}}}
+          header = {{text: "Feature", style: {color:"var(--color-primary)", textTransform: "uppercase"}}}
           description = 
           {{text: '<p>The best day to join Bankist was one year ago. The second best is today!</p>',
             style: {color: "#fff"}
