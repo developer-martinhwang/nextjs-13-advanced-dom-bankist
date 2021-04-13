@@ -33,17 +33,19 @@ const useStyles = makeStyles({
         position: "fixed",
         zIndex: "2",
         width: "100%",
+        height: "0px",
         padding: "0",
         margin: "0",
         color: "#333",
         backgroundColor: "#f3f3f3d1",
         animation: "$inactivMainNav 1000ms",
+        overflow: "hidden",
         opacity: 0,
-        transform: "translateY(-200%)",
-        // display: "none",
+        // transform: "translateY(-200%)",
+       
         '& li': {
             textAlign: "center",
-            margin: "15px auto"
+            margin: "15px auto",
         }
     },
     nav_link:{
@@ -53,10 +55,13 @@ const useStyles = makeStyles({
         position: "fixed",
         zIndex: "2",
         width: "100%",
+        display: "block",
+        height: "300px",
         animation: "$activMainNav 1000ms",
         opacity: 1,
-        transform: "translateY(0%)",
-        // display: "block",
+        // transform: "translateY(0%)",
+        '& li': {
+        }
     },
     logo: {
         '& img': {
@@ -67,21 +72,26 @@ const useStyles = makeStyles({
     '@keyframes activMainNav': {
         "0%": {
             opacity: 0,
-            transform: "translateY(-40%)"
+            // transform: "translateY(-40%)"
+            height: "0px"
         },
         "100%": {
             opacity: 1,
-            transform: "translateY(0)"
+            // transform: "translateY(0)"
+            height: "300px"
         }
     },
     '@keyframes inactivMainNav': {
         "0%": {
             opacity: 1,
-            transform: "translateY(0)"
+            // transform: "translateY(0)"
+            height:"300px"
         },
         "100%": {
             opacity: 0,
-            transform: "translateY(-40%)",
+            // transform: "translateY(-40%)",
+            height:"0px",
+            display: "none",
         }
     },
     '@media screen and (min-width: 768px)': {
