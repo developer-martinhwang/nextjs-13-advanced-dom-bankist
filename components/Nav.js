@@ -7,7 +7,7 @@
  * Revision History:
  * -
  */
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {makeStyles} from '@material-ui/styles'
 const useStyles = makeStyles({
     navbar:{
@@ -38,7 +38,6 @@ const useStyles = makeStyles({
         margin: "0",
         color: "#333",
         backgroundColor: "#f3f3f3d1",
-        animation: "$inactivMainNav 1000ms",
         overflow: "hidden",
         opacity: 0,
         // transform: "translateY(-200%)",
@@ -50,6 +49,9 @@ const useStyles = makeStyles({
     },
     nav_link:{
         textDecoration: "none",
+    },
+    inactive_main_nav:{
+        animation: "$inactivMainNav 1000ms",
     },
     active_main_nav: {
         position: "fixed",
@@ -78,7 +80,7 @@ const useStyles = makeStyles({
         "100%": {
             opacity: 1,
             // transform: "translateY(0)"
-            height: "300px"
+            height: "300px",
         }
     },
     '@keyframes inactivMainNav': {
@@ -91,7 +93,7 @@ const useStyles = makeStyles({
             opacity: 0,
             // transform: "translateY(-40%)",
             height:"0px",
-            display: "none",
+            // display: "none",
         }
     },
     '@media screen and (min-width: 768px)': {
@@ -105,8 +107,10 @@ const useStyles = makeStyles({
         },
         main_nav: {
             opacity: 1,
-            transform: "translateY(0%)",
+            overflow: "visible",
+            // transform: "translateY(0%)",
             position: "inherit",
+            height: "0",
             display: "flex",
             paddingRight: "50px",
             flexDirection: "row",
@@ -128,7 +132,6 @@ function Nav() {
     const [menu, setMenu] = useState(false);
     const toggleMenu = () => {
         setMenu(!menu);
-        console.log('menu', menu);
     }
     return (
         <nav className={classes.navbar}>
@@ -140,7 +143,7 @@ function Nav() {
             <a href="#" className={classes.logo}>
                 <img src="/img/logo.png"/>
             </a>
-            <ul className={`${classes.main_nav} ${menu?classes.active_main_nav:null}`}>
+            <ul className={`${classes.main_nav} ${menu?classes.active_main_nav:classes.inactive_main_nav}`}>
                 <li>
                     <a href="https://www.google.com/" className={classes.nav_links}>Features</a>
                 </li>
